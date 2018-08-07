@@ -1,0 +1,89 @@
+{
+  "version": "1.0.6",
+  "name": "Direct Energie",
+  "type": "konnector",
+  "language": "node",
+  "icon": "directenergie.png",
+  "slug": "directenergie",
+  "source": "git://github.com/konnectors/cozy-konnector-directenergie.git",
+  "editor": "Brice Coquereau",
+  "vendor_link": "https://clients.direct-energie.com/connexion-clients-particuliers/",
+  "categories": ["energy"],
+  "fields": {
+    "login": {
+      "type": "email"
+    },
+    "password": {
+      "type": "password"
+    },
+    "advancedFields": {
+      "folderPath": {
+        "advanced": true,
+        "isRequired": false
+      }
+    }
+  },
+  "data_types": [
+    "bill"
+  ],
+  "permissions": {
+    "bank operations": {
+      "type": "io.cozy.bank.operations"
+    },
+    "bills": {
+      "type": "io.cozy.bills"
+    },
+    "files": {
+      "type": "io.cozy.files"
+    },
+    "accounts": {
+      "type": "io.cozy.accounts",
+      "verbs": ["GET"]
+    }
+  },
+  "developer": {
+    "name": "Brice Coquereau",
+    "url": "brice@coquereau.fr"
+  },
+  "langs": ["fr", "en"],
+  "locales": {
+    "fr": {
+      "short_description": "Récupère toutes factures et échéanciers Direct Energie",
+      "long_description": "Récupère toutes factures et échéanciers Direct Energie",
+      "permissions": {
+        "bank operations": {
+          "description": "Utilisé pour relier les factures à des operations bancaires"
+        },
+        "bills": {
+          "description": "Utilisé pour sauvegarder les données de facturation"
+        },
+        "files": {
+          "description": "Utilisé pour sauvegarder les factures"
+        },
+        "accounts": {
+          "description": "Utilisé pour obtenir les données du compte"
+        }
+      }
+    },
+    "en": {
+      "short_description": "Retrieves all your Direct Energie invoices",
+      "long_description": "Retrieves all your Direct Energie invoices",
+      "permissions": {
+        "bank operations": {
+          "description": "Required to link bank operations to bills"
+        },
+        "bills": {
+          "description": "Used to save billing data"
+        },
+        "files": {
+          "description": "Required to save the bills"
+        },
+        "accounts": {
+          "description": "Required to get the account's data"
+        }
+      }
+    }
+  },
+  "manifest_version": "2",
+  "banksTransactionRegExp": "\\bdirect energie\\b"
+}
